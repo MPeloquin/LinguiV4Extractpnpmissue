@@ -1,0 +1,31 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+
+# IDE files
+.idea
+
+
+# misc
+.DS_Store
+.terraform
+.yarn
+.yarnrc
+.yalc
+
+yarn-debug.log*
+yarn-error.log*
+
+# envs
+.env.local
+.jest-test-results.json
+
+# generated certs
+.landr-certs/
+
+.eslintcache
+tsconfig.tsbuildinfo
+
+# Generated summary
+summary.txt

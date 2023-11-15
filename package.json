@@ -1,0 +1,43 @@
+{
+    "name": "lingui-workspace-test",
+    "private": true,
+    "dependencies": {},
+    "engines": {
+        "pnpm": "8.7.4"
+    },
+    "devDependencies": {
+        "husky": "^6.0.0",
+        "lint-staged": "^11.0.0",
+        "prettier": "^2.5.1",
+        "typescript": "^4.7.4",
+        "yargs": "^17.1.1"
+    },
+    "lint-staged": {
+        "*.{js,ts,tsx}": [
+            "eslint --quiet --cache --fix"
+        ],
+        "*.{json,js,md,ts,jsx,tsx,html}": [
+            "prettier --write"
+        ]
+    },
+    "scripts": {
+        "preinstall": "npx only-allow pnpm",
+        "clean:install": "find . -name \"node_modules\" -type d -prune -exec rm -rf '{}' + && pnpm install",
+        "quick-install": "SKIP_POSTINSTALL=1 pnpm install"
+    },
+
+    "pnpm": {
+        "packageExtensions": {
+            "@apollo/react-testing": {
+                "peerDependencies": {
+                    "apollo-cache-inmemory": "*"
+                }
+            },
+            "stream-chat-react": {
+                "dependencies": {
+                    "@babel/runtime": "^7.12.7"
+                }
+            }
+        }
+    }
+}
